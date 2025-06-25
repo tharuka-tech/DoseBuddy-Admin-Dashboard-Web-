@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Non-Approve Adminn Dashboard</title>
+  <script type="module" src="scripts/improve.js"></script>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f4f8;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .dashboard {
+      background-color: #ffffff;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      width: 800px;
+      min-height: 600px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo {
+      display: block;
+      margin: 0 auto 20px auto;
+      width: 250px;
+      height: auto;
+      object-fit: contain;
+      
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 28px;
+      color: #333;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .logout-btn {
+      background-color: #f57c00;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 25px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .logout-btn:hover {
+      background-color: #e65100;
+    }
+
+    .approveDashboard {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 12px 25px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .approveDashboard:hover {
+      background-color: #388E3C;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 40px;
+    }
+
+    table th, table td {
+      border: 1px solid #ddd;
+      padding: 15px;
+      text-align: center;
+      font-size: 16px;
+      color: #333;
+    }
+
+    table th {
+      background-color: #ff9800;
+      color: white;
+    }
+
+    table td {
+      background-color: #f9f9f9;
+    }
+
+    table tr:hover {
+      background-color: #f1f1f1;
+      cursor: pointer;
+    }
+
+    .actions button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border-radius: 8px;
+      font-size: 16px;
+      border: none;
+    }
+
+    .viewBtn {
+      background-color: #0e5ae6;
+      color: white;
+    }
+
+    .viewBtn:hover {
+      background-color: #0b47b3;
+    }
+
+    .addBtn {
+      background-color: #1df3e8;
+      color: white;
+      padding: 12px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 8px;
+      margin-top: 30px;
+      transition: background-color 0.3s ease;
+    }
+
+    .addBtn:hover {
+      background-color: #17c9c9;
+    }
+
+    .approve-btn{
+      background-color: #27860a;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 5px 10px
+    }
+
+    
+
+    .delete-btn{
+    
+      background-color: #860a0a;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 5px 10px;
+
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="dashboard">
+    <header>
+      <div class="header-logo">
+        <h1>Approve Deatails</h1>
+        <img src="image/logo.png" alt="Admin Logo" class="logo">
+      </div>
+      <div>
+        <button id="approve-Dashboard" class="approveDashboard">Approve Dashboard</button>
+        <button id="logout-btn" class="logout-btn">LOGOUT</button>
+      </div>
+    </header>
+
+    <table id="data-table">
+      <thead>
+        <tr>
+          <th>Patient ID</th>
+          <th>Caregiver ID</th>
+          <th>Caregiver Email</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Dynamic rows will be added here -->
+      </tbody>
+    </table>
+
+    <div class="actions">
+      <button id="view-btn" class="viewBtn" type="button">View Non- Apptove Caregiver</button>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script type="module" src="scripts/admin.js"></script>
+
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5d3a1;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;  
+      height: 100vh;
+    }
+
+    .logo {
+      display: block;
+      margin: 0 auto 20px auto;
+      width: 250px;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .dashboard {
+      background-color: #fff7e6;
+      padding: 40px 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      width: 750px;
+      min-height: 600px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+
+    header h1 {
+      font-size: 28px;
+      color: #333;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    header .header-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logout-btn{ 
+      background-color: #f50000;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .BackBtn{
+
+      background-color: #f57c00;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+    }
+
+    
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 30px;
+    }
+
+    table th, table td {
+      border: 1px solid #ddd;
+      padding: 12px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    table th {
+      background-color: #ffa000;
+      color: white;
+    }
+
+    table td {
+      background-color: #fff;
+    }
+
+    form {
+      display: grid;
+      gap: 15px;
+      margin-bottom: 30px;
+    }
+
+    form label {
+      font-size: 14px;
+      color: #333;
+      font-weight: bold;
+    }
+
+    form input {
+      padding: 12px;
+      font-size: 14px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    button {
+      margin: 0 5px;
+      padding: 8px 15px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border-radius: 8px;
+      border: none;
+    }
+
+    .edit-btn {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .delete-btn {
+      background-color: #f44336;
+      color: white;
+    }
+
+    .viewBtn {
+      background-color: #4ab2e2;
+      color: white;
+    }
+
+    .addBtn {
+      background-color: #25ff6e;
+      color: white;
+    }
+
+    
+
+    .searchBtn {
+      background-color: #1e5363;
+      color: white;
+    }
+
+  </style>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Approve Admin Dashboard</title>
+</head>
+
+<body>
+
+  <div class="dashboard">
+    <header>
+      <div class="header-logo">
+        <button id="Back-btn" class="BackBtn" type="button">Back</button>
+        <img src="image/logo.png" alt="Admin Logo" class="logo">
+      </div>
+      <h1>Approve Details</h1>
+      <button id="logout-btn" class="logout-btn">LOGOUT</button>
+    </header>
+
+    <table id="data-table">
+      <thead>
+        <tr>
+          <th>Patient ID</th>
+          <th>Caregiver ID</th>
+          <th>Caregiver Email</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <form id="crud-form">
+      <label for="patient-id-input">Patient ID:</label>
+      <input type="text" id="patient-id-input" name="patient-id" required>
+
+      <label for="caregiver-id-input">Caregiver ID:</label>
+      <input type="text" id="caregiver-id-input" name="caregiver-id" required>
+
+      <label for="caregiver-email-input">Caregiver Email:</label>
+      <input type="text" id="caregiver-email-input" name="caregiver-email" required>
+
+      <button id="approve-btn" class="addBtn" type="submit">Add Caregiver</button>
+      <button id="view-btn" class="viewBtn" type="button">View Approve Caregiver</button>
+    </form>
+  </div>
+
+</body>
+</html>
